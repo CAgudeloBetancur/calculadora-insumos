@@ -1,7 +1,7 @@
 export const SITIO = {
   nombre: 'Calculadora de Insumos',
   descripcion: 'Calcula la cantidad de insumos necesarios para un cultivo o preparación',
-  url: 'https://calculadora-insumos.pages.dev',
+  url: 'https://calculadorainsumos.com',
   idioma: 'es-CO'
 } as const;
 

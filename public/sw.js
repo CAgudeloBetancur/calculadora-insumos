@@ -5,7 +5,7 @@
   - Assets estáticos (JS, CSS, imágenes): cache-first.
   Ver sldc/02-diseno.md → "Estrategia PWA y offline". */
 
-const CACHE_NAME = 'calculadora-insumos-v2';
+const CACHE_NAME = 'calculadora-insumos-v3';
 
 // AssetsPrecacheados en la instalación del SW.
 const PRECACHE_URLS = [
@@ -14,6 +14,8 @@ const PRECACHE_URLS = [
   '/icon.svg',
   '/icon-192.png',
   '/icon-512.png',
+  '/screenshot-mobile.png',
+  '/screenshot-desktop.png'
 ];
 
 self.addEventListener('install', (event) => {
