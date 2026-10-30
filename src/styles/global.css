@@ -1,0 +1,366 @@
+:root {
+  /* Colores — tema claro */
+  --color-fondo: #f6f7f4;
+  --color-superficie: #ffffff;
+  --color-texto: #1f2a24;
+  --color-texto-suave: #5b6b62;
+  --color-borde: #d8ded9;
+  --color-borde-fuerte: #a8b5ac;
+  --color-primario: #2f6b45;
+  --color-primario-oscuro: #245338;
+  --color-primario-suave: #e6f0e9;
+  --color-error: #a3241c;
+  --color-error-fondo: #fbeae8;
+  --color-foco: #1c5fb8;
+
+  /* Espaciado */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+
+  /* Tipografía */
+  --fuente: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tamaño-base: 1rem;
+  --radio: 8px;
+  --sombra: 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #121713;
+    --color-superficie: #1b231d;
+    --color-texto: #e8ede9;
+    --color-texto-suave: #a3b3a8;
+    --color-borde: #2f3a32;
+    --color-borde-fuerte: #46544a;
+    --color-primario: #6fb98c;
+    --color-primario-oscuro: #8bcba3;
+    --color-primario-suave: #223026;
+    --color-error: #f08a80;
+    --color-error-fondo: #3a2320;
+    --color-foco: #7ab3ff;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: var(--tamaño-base);
+  line-height: 1.5;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+/* Foco visible para navegación por teclado (accesibilidad) */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+/* Utilidad: texto solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Layout ===== */
+
+.contenedor {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: var(--esp-4) var(--esp-4) var(--esp-6);
+}
+
+header h1 {
+  margin: 0 0 var(--esp-1);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.subtitulo {
+  margin: 0 0 var(--esp-5);
+  color: var(--color-texto-suave);
+}
+
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-5);
+}
+
+/* ===== Formulario ===== */
+
+.mezcla-form fieldset {
+  margin: 0 0 var(--esp-5);
+  padding: var(--esp-4);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.mezcla-form legend {
+  padding: 0 var(--esp-2);
+  font-weight: 600;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  margin-bottom: var(--esp-4);
+}
+
+.campo:last-child {
+  margin-bottom: 0;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+input[type='text'],
+input[type='number'] {
+  width: 100%;
+  padding: var(--esp-3);
+  font: inherit;
+  font-size: 1rem; /* evita zoom automático en iOS */
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde-fuerte);
+  border-radius: var(--radio);
+}
+
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Tabla de insumos ===== */
+
+.tabla-mezcla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-mezcla th {
+  padding: var(--esp-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--color-texto-suave);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.tabla-mezcla td {
+  padding: var(--esp-2);
+  border-bottom: 1px solid var(--color-borde);
+  vertical-align: middle;
+}
+
+/* ===== Botones ===== */
+
+button {
+  padding: var(--esp-3) var(--esp-4);
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primario);
+  border: 1px solid transparent;
+  border-radius: var(--radio);
+  cursor: pointer;
+  min-height: 44px; /* objetivo táctil mínimo */
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-primario-oscuro);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.secundario {
+  color: var(--color-texto);
+  background: transparent;
+  border-color: var(--color-borde-fuerte);
+}
+
+button.secundario:hover:not(:disabled) {
+  background: var(--color-primario-suave);
+}
+
+.acciones-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+  margin-top: var(--esp-4);
+}
+
+/* ===== Resultados ===== */
+
+.resultados {
+  padding: var(--esp-4);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.resultados h2 {
+  margin: 0 0 var(--esp-4);
+  font-size: 1.15rem;
+}
+
+.resultado-insumo {
+  padding: var(--esp-3) 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.resultado-insumo h3 {
+  margin: 0 0 var(--esp-1);
+  font-size: 1rem;
+}
+
+.resultado-insumo .requerido {
+  margin: 0 0 var(--esp-1);
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.bultos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bultos li {
+  padding: var(--esp-1) 0;
+  font-size: 1.05rem;
+}
+
+.bultos .sobrante {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.resultados .total {
+  margin: var(--esp-4) 0 0;
+  padding-top: var(--esp-3);
+  border-top: 2px solid var(--color-borde);
+  font-size: 1.05rem;
+}
+
+.resultados .nota {
+  margin: var(--esp-3) 0 0;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.resultados-error {
+  background: var(--color-error-fondo);
+  border-color: var(--color-error);
+}
+
+.resultados-error h2 {
+  color: var(--color-error);
+}
+
+.resultados-error ul {
+  margin: 0;
+  padding-left: var(--esp-4);
+  color: var(--color-error);
+}
+
+/* ===== Modo tarjeta en pantallas pequeñas =====
+  Cada insumo se convierte en una tarjeta apilada.
+  Ver decisión de diseño "opción B" en la fase B-9. */
+
+@media (max-width: 37.5rem) {
+  .tabla-mezcla,
+  .tabla-mezcla tbody,
+  .tabla-mezcla tr,
+  .tabla-mezcla td {
+    display: block;
+    width: 100%;
+  }
+
+  .tabla-mezcla thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .tabla-mezcla tr {
+    margin-bottom: var(--esp-4);
+    padding: var(--esp-3);
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+  }
+
+  .tabla-mezcla td {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--esp-3);
+    padding: var(--esp-2) 0;
+    border-bottom: none;
+  }
+
+  /* Etiqueta visible tomada del <th> original */
+  .tabla-mezcla td::before {
+    content: attr(data-label);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
+  }
+
+  /* Las celdas de texto/input ocupan el ancho completo */
+  .tabla-mezcla td:first-child,
+  .tabla-mezcla td:nth-child(2),
+  .tabla-mezcla td:nth-child(3) {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-mezcla td:first-child::before,
+  .tabla-mezcla td:nth-child(2)::before,
+  .tabla-mezcla td:nth-child(3)::before {
+    margin-bottom: calc(-1 * var(--esp-1));
+  }
+}

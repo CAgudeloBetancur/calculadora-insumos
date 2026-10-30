@@ -1,0 +1,35 @@
+---
+import { Calculadora } from "../components/Calculadora";
+import '../styles/global.css';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="theme-color" content="#2f6b45" />
+		<meta name="description" content="Calcula cuántos bultos de fertilizante necesitas para tu cultivo."/>
+
+		<link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Calculadora" />
+
+		<title>Calculadora de insumos</title>
+	</head>
+	<body>
+		<main class="contenedor">
+			<header>
+				<h1>Calculadora de insumos</h1>
+				<p class="subtitulo">¿Cuántos bultos de insumos necesitas para tu cultivo?</p>
+			</header>
+			<Calculadora client:load/>
+		</main>
+		<script>
+      import { registrarServiceWorker } from '../scripts/register-sw';
+      registrarServiceWorker();
+    </script>
+	</body>
+</html>
