@@ -13,7 +13,7 @@ const MAX_BULTO_KG = 75;
 
 function validar(mezcla:Mezcla): string[] {
 
-  let errores:string[] = [];
+  const errores:string[] = [];
 
   if(mezcla.insumos.length === 0)
     errores.push("Agrega al menos un insumo.");
@@ -50,7 +50,7 @@ export function calcular(mezcla:Mezcla): ResultadoCalculo {
 
   const totalPartesEnMezcla = mezcla.insumos.reduce((acc, f) => acc + f.partes, 0);
 
-  let resultadoInsumos:ResultadoInsumo[] = mezcla.insumos.map(f => { 
+  const resultadoInsumos:ResultadoInsumo[] = mezcla.insumos.map(f => { 
     
     const gramosPorPlantaPorInsumo:number = mezcla.gramosPorPlantaTotal * (f.partes / totalPartesEnMezcla);
     const totalGramosRequeridoDeInsumo:number = mezcla.plantas * gramosPorPlantaPorInsumo;
