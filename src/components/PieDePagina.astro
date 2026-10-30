@@ -1,0 +1,24 @@
+---
+// Pie de página con disclaimer y aviso de privacidad.
+import { SITIO } from '../config';
+
+const anio = new Date().getFullYear();
+---
+
+<footer class="pie">
+	<p class="disclaimer">
+		<strong>Aviso:</strong> esta herramienta es una calculadora de apoyo.
+		No reemplaza la asesoría de un agrónomo ni de un técnico extensionista.
+		La dosis correcta depende del análisis de suelo, la variedad, la		edad del cultivo y el historial de fertilización.
+	</p>
+
+	<p class="privacidad">
+		No se registran cuentas ni se guardan tus cálculos. Todo el cálculo
+		se realiza en tu navegador y ningún dato de tu cultivo se envía a
+		nuestros servidores.
+	</p>
+
+	<p class="creditos">
+		{SITIO.nombre} · {anio}
+	</p>
+</footer>

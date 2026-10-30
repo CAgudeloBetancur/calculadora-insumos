@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calculadora-insumos.pages.dev/sitemap.xml

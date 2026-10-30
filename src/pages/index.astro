@@ -1,6 +1,9 @@
 ---
 import { Calculadora } from "../components/Calculadora";
 import Anuncio from "../components/Anuncio.astro";
+import ComoUsar from "../components/ComoUsar.astro";
+import PreguntasFrecuentes from "../components/PreguntasFrecuentes.astro";
+import PieDePagina from "../components/PieDePagina.astro";
 import '../styles/global.css';
 ---
 
@@ -9,7 +12,7 @@ import '../styles/global.css';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="theme-color" content="#2f6b45" />
-		<meta name="description" content="Calcula cuántos bultos de fertilizante necesitas para tu cultivo."/>
+		<meta name="description" content="Calcula cuántos bultos de fertilizante necesitas para tu cultivo. Funciona sin internet (PWA instalable) y no requiere registro"/>
 
 		<link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
@@ -28,7 +31,10 @@ import '../styles/global.css';
 			</header>
 			<Calculadora client:load/>
 			<Anuncio/>
+			<ComoUsar/>
+			<PreguntasFrecuentes/>
 		</main>
+		<PieDePagina/>
 		<script>
       import { registrarServiceWorker } from '../scripts/register-sw';
       registrarServiceWorker();
