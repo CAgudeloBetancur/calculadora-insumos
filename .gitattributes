@@ -1,0 +1,18 @@
+# Normalizar finales de línea entre sistemas operativos.
+* text=auto eol=lf
+
+# Forzar LF en archivos de texto.
+*.ts text eol=lf
+*.tsx text eol=lf
+*.astro text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.webmanifest text eol=lf
+
+# Archivos binarios.
+*.png binary
+*.ico binary
