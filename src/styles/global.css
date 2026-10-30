@@ -364,3 +364,21 @@ button.secundario:hover:not(:disabled) {
     margin-bottom: calc(-1 * var(--esp-1));
   }
 }
+
+/* ===== Publicidad ===== */
+
+.anuncio {
+  margin: var(--esp-5) 0;
+  padding: var(--esp-4);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  text-align: center;
+}
+
+.anuncio-placeholder {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  background: var(--color-fondo);
+  border-style: dashed;
+}

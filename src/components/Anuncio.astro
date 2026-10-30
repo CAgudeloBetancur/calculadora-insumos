@@ -1,0 +1,31 @@
+---
+import { ADSENSE } from '../config';
+
+interface Props {
+  /** Identificador del bloque de anuncios. Si está vacío, usa el del config. */
+  slot?: string;
+  /** Texto alternativo cuando el anuncio no carga. */
+  altText?: string;
+}
+
+const { slot = ADSENSE.slotId, altText: etiqueta = 'Publicidad' } = Astro.props;
+
+const hayAnuncio = Boolean(ADSENSE.publisherId && slot);
+---
+
+{ hayAnuncio ? (
+  <aside class="anuncio" aria-label={etiqueta}>
+    <ins      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={ADSENSE.publisherId}
+      data-ad-slot={slot}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
+    <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE.publisherId}`} crossorigin="anonymous" />
+  </aside>
+) : (
+  <aside class="anuncio anuncio-placeholder" aria-label={etiqueta} aria-hidden="true">
+    <span>Espacio reservado para publicidad</span>
+  </aside>
+)}

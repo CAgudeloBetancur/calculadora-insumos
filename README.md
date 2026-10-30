@@ -58,3 +58,7 @@ en un vault de Obsidian del proyecto, bajo sldc/:
 - 05-revision.md — estrategia de pruebas
 - 06-despliegue.md — CI/CD y publicación
 - 07-monitorizacion.md — métricas y manejo de errores
+
+# Licencia
+
+Este proyecto está bajo licencia [MIT](LICENSE)

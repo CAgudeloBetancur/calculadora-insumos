@@ -1,5 +1,6 @@
 ---
 import { Calculadora } from "../components/Calculadora";
+import Anuncio from "../components/Anuncio.astro";
 import '../styles/global.css';
 ---
 
@@ -26,6 +27,7 @@ import '../styles/global.css';
 				<p class="subtitulo">¿Cuántos bultos de insumos necesitas para tu cultivo?</p>
 			</header>
 			<Calculadora client:load/>
+			<Anuncio/>
 		</main>
 		<script>
       import { registrarServiceWorker } from '../scripts/register-sw';
