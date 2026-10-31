@@ -12,12 +12,13 @@ export const SITIO = {
  * placeholder y NO carga ningún script de terceros. Esto permite 
  * desplegar y solicitar la cuenta de AdSense sin tener el ID.
  *
- * Cuando obtenga el ID (formato "ca-pub-XXXXXXXXXXXXXXX"), reemplazar '' por el valor y redesplegar.
+ * Cuando obtenga el ID (formato "ca-pub-XXXXXXXXXXXXXXX"), reemplazar 
+ * '' por el valor y redesplegar. No hay más cambios en el código.
  */
 
 export const ADSENSE = {
-  publisherId: '',
-  slotId: '', // cuando se cree bloque de anuncios en código
+  publisherId: 'ca-pub-5894289566118949',
+  slotId: '8521957921',
 } as const;
 
 export const ANALYTICS = {

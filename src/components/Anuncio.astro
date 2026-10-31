@@ -13,19 +13,24 @@ const { slot = ADSENSE.slotId, altText: etiqueta = 'Publicidad' } = Astro.props;
 const hayAnuncio = Boolean(ADSENSE.publisherId && slot);
 ---
 
-{ hayAnuncio ? (
-  <aside class="anuncio" aria-label={etiqueta}>
-    <ins      class="adsbygoogle"
-      style="display:block"
-      data-ad-client={ADSENSE.publisherId}
-      data-ad-slot={slot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    />
-    <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE.publisherId}`} crossorigin="anonymous" />
-  </aside>
-) : (
-  <aside class="anuncio anuncio-placeholder" aria-label={etiqueta} aria-hidden="true">
-    <span>Espacio reservado para publicidad</span>
-  </aside>
-)}
+{ 
+  hayAnuncio ? (
+    <aside class="anuncio" aria-label={etiqueta}>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={ADSENSE.publisherId}
+        data-ad-slot={slot}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+      <script is:inline>
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </aside>
+  ) : (
+    <aside class="anuncio anuncio-placeholder" aria-label={etiqueta} aria-hidden="true">
+      <span>Espacio reservado para publicidad</span>
+    </aside>
+  )
+}
