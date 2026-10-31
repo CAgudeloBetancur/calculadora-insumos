@@ -12,6 +12,8 @@
   --color-error: #a3241c;
   --color-error-fondo: #fbeae8;
   --color-foco: #1c5fb8;
+  --color-link: #1c5fb8;
+  --color-link-visitado: #6b3fa0;
 
   /* Espaciado */
   --esp-1: 0.25rem;
@@ -42,6 +44,8 @@
     --color-error: #f08a80;
     --color-error-fondo: #3a2320;
     --color-foco: #7ab3ff;
+    --color-link: #8ab4f8;
+    --color-link-visitado: #c4a7e7;
   }
 }
 
@@ -505,4 +509,51 @@ button.secundario:hover:not(:disabled) {
 
 .pie .creditos {
   font-weight: 600;
+}
+
+/* ===== Enlaces ===== */
+
+a {
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visitado);
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.ayuda a,
+.pie a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.ayuda p {
+  line-height: 1.6;
+}
+
+/* ===== Enlaces del pie ===== */
+
+.pie-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-3);
+  padding-bottom: var(--esp-3);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.pie-enlaces a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pie-enlaces a:hover,
+.pie-enlaces a:focus-visible {
+  text-decoration: underline;
 }

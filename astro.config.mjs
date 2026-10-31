@@ -7,5 +7,6 @@ import preact from '@astrojs/preact';
 export default defineConfig({
   site: 'https://calculadorainsumos.com',
   output: 'static',
+  build: {format: 'directory'},
   integrations: [preact()]
 });

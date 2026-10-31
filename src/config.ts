@@ -9,7 +9,8 @@ export const SITIO = {
  * Google AdSense.
  *
  * Mientras `publisherId` esté vacío, el componente <Anuncio /> muestra un
- * placeholder y NO carga ningún script de terceros. Esto permite * desplegar y solicitar la cuenta de AdSense sin tener el ID.
+ * placeholder y NO carga ningún script de terceros. Esto permite 
+ * desplegar y solicitar la cuenta de AdSense sin tener el ID.
  *
  * Cuando obtenga el ID (formato "ca-pub-XXXXXXXXXXXXXXX"), reemplazar '' por el valor y redesplegar.
  */

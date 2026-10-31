@@ -2,10 +2,10 @@
   Service worker de la calculadora.
   Estrategia:
   - Navegaciones (HTML): network-first con fallback a la caché.
-  - Assets estáticos (JS, CSS, imágenes): cache-first.
+  - Assets estáticos (JS, CSS, imágenes): stale-while-revalidate.
   Ver sldc/02-diseno.md → "Estrategia PWA y offline". */
 
-const CACHE_NAME = 'calculadora-insumos-v3';
+const CACHE_NAME = 'calculadora-insumos-v4';
 
 // AssetsPrecacheados en la instalación del SW.
 const PRECACHE_URLS = [
@@ -64,15 +64,17 @@ self.addEventListener('fetch', (event) => {
   // Assets: cache-first (rápido, y solo se revalidan si no están).
   event.respondWith(
     caches.match(request).then((cached) => {
-      if (cached) return cached;
+      const desdeRed = fetch(request)
+        .then((response) => {
+          if (response.ok && response.type === 'basic') {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(() => cached);
 
-      return fetch(request).then((response) => {
-        if (response.ok && response.type === 'basic') {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-        }
-        return response;
-      });
+      return cached || desdeRed;
     })
   );
 });
