@@ -1,0 +1,48 @@
+---
+interface Props {
+  /** Ruta actual, para resaltar el enlace activo. */
+  rutaActual?: string;
+}
+
+const { rutaActual = '/' } = Astro.props;
+
+const enlaces = [
+  { href: '/', texto: 'Calculadora' },
+  { href: '/glosario/', texto: 'Glosario' },
+  { href: '/conversion/', texto: 'Conversiones' },
+  { href: '/densidad/', texto: 'Densidad' },
+  { href: '/preguntas-frecuentes/', texto: 'Preguntas' },
+  { href: '/contacto/', texto: 'Contacto' },
+];
+
+const activo = (href: string) => href === '/' ? rutaActual === '/' : rutaActual.startsWith(href);
+---
+
+<nav class="nav-principal" aria-label="Navegación principal">
+  <details class="nav-movil">
+    <summary class="nav-boton">Menú</summary>
+    <ul class="nav-lista">
+      {
+        enlaces.map((e) => (
+          <li>
+            <a href={e.href} aria-current={activo(e.href) ? 'page' : undefined}>
+              {e.texto}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+
+  <ul class="nav-lista nav-escritorio">
+    {
+      enlaces.map((e) => (
+        <li>
+          <a href={e.href} aria-current={activo(e.href) ? 'page' : undefined}>
+            {e.texto}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

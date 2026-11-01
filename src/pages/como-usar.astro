@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+---
+
+<Base
+  titulo="Cómo usar la calculadora"
+  descripcion="Paso a paso para calcular cuántos bultos de fertilizante necesitas para tu cultivo, y cómo leer cada resultado."
+  rutaActual="/"
+>
+  <header>
+    <h1>Cómo usar la calculadora</h1>
+    <p class="subtitulo">
+      Cuatro datos y tendrás el resultado. La calculadora no recomienda
+      dosis: hace cuentas con las que tú le entregues.
+    </p>
+  </header>
+
+  <section class="ayuda">
+    <h2>Los cuatro datos que necesitas</h2>
+
+    <ol class="pasos">
+      <li>
+        <strong>Número de plantas.</strong>
+        <p>
+          Si no lo sabes exacto, estima. Puedes calcularlo con la
+          <a href="/densidad/">calculadora de densidad de siembra</a>.
+        </p>
+      </li>
+      <li>
+        <strong>Dosis recomendada en gramos por planta.</strong>
+        <p>
+          Esta cifra la define tu agrónomo o el técnico que te asesora. La
+          calculadora no recomienda dosis: solo hace cuentas con la que tú
+          le entregues.
+        </p>
+      </li>
+      <li>
+        <strong>Proporción de la mezcla.</strong>
+        <p>
+          Cuántas partes aporta cada insumo. Por ejemplo, si tu
+          recomendación es 2 partes de urea por 1 de DAP, escribes 2 en las
+          partes de la urea y 1 en las del DAP.
+        </p>
+      </li>
+      <li>
+        <strong>Peso del bulto de cada producto.</strong>
+        <p>
+          Es el empaque con el que viene cada insumo: 50 kg, 40 kg, 25 kg.
+          Puedes consulta los equivalentes en el
+          <a href="/conversion/">convertidor de unidades</a>.
+        </p>
+      </li>
+    </ol>
+
+    <p class="nota-ayuda">
+      El resultado se actualiza solo mientras escribes. No necesitas buscar
+      ni apretar ningún botón.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Cómo se lee el resultado</h2>
+
+    <dl class="definiciones">
+      <dt>Kilogramos requeridos</dt>
+      <dd>
+        Cuánto producto necesitas en total. Es la dosis por planta
+        multiplicada por el número de plantas, repartida según la
+        proporción de la mezcla.
+      </dd>
+
+      <dt>Bultos</dt>
+      <dd>
+        Cuántos bultos debes comprar. El redondeo es siempre hacia arriba,
+        para que siempre alcance.
+      </dd>
+
+      <dt>Sobrante</dt>
+      <dd>
+        Lo que te queda después de aplicar todo. Siempre es menor que el
+        peso de un bulto.
+      </dd>
+
+      <dt>Dosis por planta</dt>
+      <dd>
+        Cuántos gramos de ese insumo aporta cada planta, y qué porcentaje
+        de la dosis total representa.
+      </dd>
+
+      <dt>Equivalente por hectárea</dt>
+      <dd>
+        La misma cantidad expresada en kilos por hectárea, para
+        compararla con las recomendaciones que vienen en esa unidad.
+      </dd>
+    </dl>
+  </section>
+
+  <section class="ayuda">
+    <h2>Sobre la cotización</h2>
+    <p>
+      Puedes agregar hasta 5 proveedores y comparar el precio del bulto de
+      cada insumo en cada uno. El sistema te muestra el costo total de
+      comprar en cada proveedor y señala cuál es el más barato.
+    </p>
+    <p>
+      Los precios no se guardan: solo existen mientras la página esté
+      abierta.
+    </p>
+  </section>
+
+  <Anuncio />
+</Base>

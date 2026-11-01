@@ -1,0 +1,240 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+---
+
+<Base
+  titulo="Preguntas frecuentes"
+  descripcion="Dudas comunes sobre el cálculo de bultos de fertilizante, dosis por planta, proporciones de mezcla y cotizaciones en varias tiendas."
+  rutaActual="/preguntas-frecuentes/"
+>
+  <header>
+    <h1>Preguntas frecuentes</h1>
+    <p class="subtitulo">
+      Las dudas que más recibimos de caficultores y técnicos.
+    </p>
+  </header>
+
+  <section class="ayuda faq">
+    <h2>Sobre el cálculo</h2>
+
+    <details>
+      <summary>¿Cómo sé cuántos bultos debo comprar?</summary>
+      <p>
+        La calculadora toma el número de plantas de tu cultivo y la dosis
+        recomendada en gramos por planta, la reparte entre los insumos
+        según la proporción de la mezcla, y te dice cuántos kilos necesitas
+        de cada uno. Como los bultos se redondean siempre hacia arriba, el
+        número que te da es el que te alcanza, con algo de sobra.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Por qué los bultos se redondean hacia arriba?</summary>
+      <p>
+        Porque es preferible que sobre fertilizante a que falte. En campo,
+        no poder fertilizar todo el cultivo por un faltante de unos kilos es
+        un problema; un poco de sobrante se puede guardar y usar en la
+        siguiente aplicación.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué diferencia hay entre lo que necesito y lo que compro?</summary>
+      <p>
+        "Requerido" es la cantidad mínima que aplicas a las plantas.
+        "Comprado" es lo que sale de multiplicar los bultos por el peso de
+        cada uno. La diferencia es el sobrante, y siempre es menor que un
+        bulto completo.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Cómo calculo el número de plantas de mi finca?</summary>
+      <p>
+        Si conoces la distancia entre surcos y entre plantas, usa la
+        <a href="/densidad/">calculadora de densidad de siembra</a>. También
+        puedes estimar contando una muestra de plantas en un área conocida
+        y extrapolando al área total.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Los gramos por planta se pueden convertir a kilos por hectárea?</summary>
+      <p>
+        Sí. El resultado incluye el equivalente en kilos por hectárea, que
+        es la unidad en la que vienen las recomendaciones agronómicas más
+        comunes. Solo necesitas saber cuántas plantas hay por hectárea.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si no sé cuánto pesa el bulto?</summary>
+      <p>
+        El peso del bulto se configura por insumo y viene en 50 kg por
+        defecto. Puedes cambiarlo al valor que tenga el producto que vas a
+        comprar (40 kg, 25 kg, etc.) y el resultado se recalcula al
+        instante. Si no lo sabes, es el dato más fácil de conseguir:
+        pregunte en la tienda.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si mi producto se vende a granel, por kilos?</summary>
+      <p>
+        En ese caso el precio que te da la tienda es por kilo, no por
+        bulto. Puedes calcular el precio del bulto equivalente dividiendo
+        el precio por kilo entre los kilos del bulto, y usar ese valor en
+        la cotización.
+      </p>
+    </details>
+  </section>
+
+  <section class="ayuda faq">
+    <h2>Sobre la mezcla y la dosis</h2>
+
+    <details>
+      <summary>¿La calculadora me dice qué fertilizante debo usar?</summary>
+      <p>
+        No. La aplicación no es fuente de recomendación agronómica. La
+        dosis y la proporción las define un agrónomo o un técnico
+        extensionista, y la calculadora solo hace las cuentas que a mano se
+        enredan.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué es la "proporción" exactamente?</summary>
+      <p>
+        Es el número de partes que aporta cada insumo dentro de la mezcla.
+        Si tu recomendación es "2 partes de urea por 1 de DAP", la dosis
+        total se reparte en 3 partes: 2 para la urea y 1 para el DAP. Con
+        una dosis total de 60 g por planta, la urea aporta 40 g y el DAP
+        20 g.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Puedo mezclar más de dos insumos?</summary>
+      <p>
+        Sí. Puedes agregar hasta 10 insumos en una misma mezcla, que es lo
+        habitual en las aplicaciones de una misma fecha.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Cómo se reparten los gramos entre los insumos?</summary>
+      <p>
+        De forma proporcional a las partes de cada uno. Si las partes suman
+        4 y un insumo aporta 2, ese insumo recibe la mitad de la dosis
+        total.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Puedo ver la dosis en otras unidades?</summary>
+      <p>
+        Además de gramos por planta, cada insumo muestra su equivalente
+        en kilos por hectárea, que es la unidad en la que vienen las
+        recomendaciones agronómicas más habituales.
+      </p>
+    </details>
+  </section>
+
+  <section class="ayuda faq">
+    <h2>Sobre la cotización</h2>
+
+    <details>
+      <summary>¿Puedo comparar precios de varias tiendas?</summary>
+      <p>
+        Sí. Agregas hasta 5 proveedores, escribes el precio del bulto de
+        cada insumo en cada uno, y el sistema calcula el total a pagar en
+        cada tienda y señala cuál es más barato.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué diferencia hay entre el costo necesario y el costo real?</summary>
+      <p>
+        El costo real es lo que pagas: el número de bultos por el precio
+        del bulto. El costo necesario es lo que consumirías si el producto
+        se pudiera comprar en fracciones exactas. La diferencia es el
+        valor del sobrante.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Por qué comparan por bulto y no por kilo?</summary>
+      <p>
+        Porque así es como se comercializa: en la tienda te dicen el
+        precio del bulto. Igual la app te muestra el precio por kilo de
+        cada producto, para que puedas comparar productos que vienen en
+        presentaciones diferentes.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Se guardan los precios que escribo?</summary>
+      <p>
+        No. Nada se guarda: ni cuentas, ni historial, ni precios. Todo se
+        procesa en tu navegador. Los precios del agro cambian mucho según
+        la zona, la temporada y el volumen, así que la app no intenta
+        tenerlos al día.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa si a un proveedor le falta un insumo?</summary>
+      <p>
+        El total de ese proveedor se calcula con lo que sí tiene, y se
+        muestra una alerta indicando qué insumo falta cotizar, para que
+        no tomes una decisión con un número incompleto.
+      </p>
+    </details>
+  </section>
+
+  <section class="ayuda faq">
+    <h2>Sobre el uso de la herramienta</h2>
+
+    <details>
+      <summary>¿Puedo usarla sin internet?</summary>
+      <p>
+        Sí. Se puede instalar en el celular como aplicación y funciona
+        completa aunque no haya señal, ideal para trabajar en la finca. Los
+        datos se procesan en tu dispositivo: no se envía información de tus
+        cálculos a ningún servidor.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Sirve para otros cultivos, no solo café?</summary>
+      <p>
+        Sí. El cálculo es genérico: funciona con cualquier cultivo en el
+        que se aplique fertilizante en gramos por planta. El lenguaje y
+        las unidades están pensados para el contexto agrícola colombiano.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Los bultos se compran o se venden por kilos?</summary>
+      <p>
+        Los dos. El bulto es el empaque con el que llega el producto del
+        fabricante (40 o 50 kg, según el caso) y una vez abierto se suele
+        vender por kilos. La calculadora te dice cuántos bultos comprar y
+        cuánto te va a sobrar de cada insumo.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Qué pasa con mis datos?</summary>
+      <p>
+        No se registran cuentas ni se guardan tus cálculos. Todo el cálculo
+        se realiza en tu navegador y ningún dato de tu cultivo se envía a
+        nuestros servidores. Puedes leer los detalles en la
+        <a href="/privacidad/">política de privacidad</a>.
+      </p>
+    </details>
+  </section>
+
+  <Anuncio />
+</Base>

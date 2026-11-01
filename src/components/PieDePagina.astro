@@ -1,5 +1,5 @@
 ---
-// Pie de página con disclaimer y aviso de privacidad.
+// Pie de página con disclaimer, aviso de privacidad y enlaces.
 import { SITIO } from '../config';
 
 const anio = new Date().getFullYear();
@@ -9,7 +9,8 @@ const anio = new Date().getFullYear();
 	<p class="disclaimer">
 		<strong>Aviso:</strong> esta herramienta es una calculadora de apoyo.
 		No reemplaza la asesoría de un agrónomo ni de un técnico extensionista.
-		La dosis correcta depende del análisis de suelo, la variedad, la		edad del cultivo y el historial de fertilización.
+		La dosis correcta depende del análisis de suelo, la variedad, la
+		edad del cultivo y el historial de fertilización.
 	</p>
 
 	<p class="privacidad">
@@ -21,6 +22,13 @@ const anio = new Date().getFullYear();
 	<nav class="pie-enlaces" aria-label="Enlaces legales">
 		<a href="/privacidad/">Privacidad</a>
 		<a href="/contacto/">Contacto</a>
+	</nav>
+
+	<nav class="pie-enlaces" aria-label="Herramientas del sitio">
+		<a href="/densidad/">Densidad de siembra</a>
+		<a href="/conversion/">Conversiones</a>
+		<a href="/glosario/">Glosario</a>
+		<a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
 	</nav>
 
 	<p class="creditos">

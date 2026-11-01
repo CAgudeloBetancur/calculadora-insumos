@@ -1,48 +1,47 @@
 ---
-import { Calculadora } from "../components/Calculadora";
-import Anuncio from "../components/Anuncio.astro";
-import ComoUsar from "../components/ComoUsar.astro";
-import PreguntasFrecuentes from "../components/PreguntasFrecuentes.astro";
-import PieDePagina from "../components/PieDePagina.astro";
-import '../styles/global.css';
+import Base from '../layouts/Base.astro';
+import { Calculadora } from '../components/Calculadora';
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<meta name="theme-color" content="#2f6b45" />
-		<meta name="description" content="Calcula cuántos bultos de fertilizante necesitas para tu cultivo. Funciona sin internet (PWA instalable) y no requiere registro"/>
+<Base
+  titulo="Calculadora de insumos"
+  descripcion="Calcula cuántos bultos de fertilizante necesitas para tu cultivo, con la dosis por planta y la proporción de la mezcla. Funciona sin internet y no requiere registro."
+  rutaActual="/"
+  conAnuncio={false}
+>
+  <header>
+    <h1>Calculadora de Insumos</h1>
+    <p class="subtitulo">
+      ¿Cuántos bultos de insumos necesitas para tu cultivo?
+    </p>
+  </header>
 
-		<link rel="manifest" href="/manifest.webmanifest" />
-		<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-		<link rel="alternate icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/icon-192.png" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Calculadora" />
+  <Calculadora client:load />
 
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5894289566118949" crossorigin="anonymous"></script>
-
-		<title>Calculadora de insumos</title>
-	</head>
-	<body>
-		<main class="contenedor">
-			<header>
-				<h1>Calculadora de insumos</h1>
-				<p class="subtitulo">¿Cuántos bultos de insumos necesitas para tu cultivo?</p>
-			</header>
-			<Calculadora client:load/>
-			<Anuncio/>
-			<ComoUsar/>
-			<PreguntasFrecuentes/>
-		</main>
-		<div class="pie-fondo">
-			<PieDePagina />
-		</div>
-		<script>
-      import { registrarServiceWorker } from '../scripts/register-sw';
-      registrarServiceWorker();
-    </script>
-	</body>
-</html>
+  <nav class="enlaces-relacionados" aria-label="Otras herramientas">
+    <h2>Otras herramientas</h2>
+    <ul>
+      <li>
+        <a href="/densidad/">Calculadora de densidad de siembra</a>
+        <p>
+          ¿Cuántas plantas caben en tu finca? O, al revés, ¿qué extensión
+          necesitas para sembrar cierta cantidad de árboles?
+        </p>
+      </li>
+      <li>
+        <a href="/conversion/">Convertidor de unidades del agro</a>
+        <p>
+          Quintales, arrobas, cargas, libras, bultos y más.
+        </p>
+      </li>
+      <li>
+        <a href="/glosario/">Glosario de insumos del café</a>
+        <p>Qué es cada producto y para qué se usa.</p>
+      </li>
+      <li>
+        <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+        <p>Las dudas que más recibimos.</p>
+      </li>
+    </ul>
+  </nav>
+</Base>

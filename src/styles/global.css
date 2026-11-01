@@ -1,5 +1,5 @@
 :root {
-  /* Colores — tema claro */
+  /* Colores â€” tema claro */
   --color-fondo: #f6f7f4;
   --color-superficie: #ffffff;
   --color-texto: #1f2a24;
@@ -23,9 +23,9 @@
   --esp-5: 1.5rem;
   --esp-6: 2rem;
 
-  /* Tipografía */
+  /* TipografÃ­a */
   --fuente: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --tamaño-base: 1rem;
+  --tamaÃ±o-base: 1rem;
   --radio: 8px;
   --sombra: 0 1px 3px rgb(0 0 0 / 8%);
 }
@@ -62,13 +62,13 @@ html {
 body {
   margin: 0;
   font-family: var(--fuente);
-  font-size: var(--tamaño-base);
+  font-size: var(--tamaÃ±o-base);
   line-height: 1.5;
   color: var(--color-texto);
   background: var(--color-fondo);
 }
 
-/* Foco visible para navegación por teclado (accesibilidad) */
+/* Foco visible para navegaciÃ³n por teclado (accesibilidad) */
 :focus-visible {
   outline: 3px solid var(--color-foco);
   outline-offset: 2px;
@@ -160,7 +160,7 @@ input[type='number'] {
   width: 100%;
   padding: var(--esp-3);
   font: inherit;
-  font-size: 1rem; /* evita zoom automático en iOS */
+  font-size: 1rem; /* evita zoom automÃ¡tico en iOS */
   color: var(--color-texto);
   background: var(--color-fondo);
   border: 1px solid var(--color-borde-fuerte);
@@ -205,7 +205,7 @@ button {
   border: 1px solid transparent;
   border-radius: var(--radio);
   cursor: pointer;
-  min-height: 44px; /* objetivo táctil mínimo */
+  min-height: 44px; /* objetivo tÃ¡ctil mÃ­nimo */
 }
 
 button:hover:not(:disabled) {
@@ -308,9 +308,9 @@ button.secundario:hover:not(:disabled) {
   color: var(--color-error);
 }
 
-/* ===== Modo tarjeta en pantallas pequeñas =====
+/* ===== Modo tarjeta en pantallas pequeÃ±as =====
   Cada insumo se convierte en una tarjeta apilada.
-  Ver decisión de diseño "opción B" en la fase B-9. */
+  Ver decisiÃ³n de diseÃ±o "opciÃ³n B" en la fase B-9. */
 
 @media (max-width: 37.5rem) {
   .tabla-mezcla,
@@ -468,7 +468,7 @@ button.secundario:hover:not(:disabled) {
 }
 
 .faq details[open] summary::after {
-  content: '−';
+  content: 'âˆ’';
 }
 
 .faq details p {
@@ -477,7 +477,7 @@ button.secundario:hover:not(:disabled) {
   font-size: 0.95rem;
 }
 
-/* ===== Pie de página ===== */
+/* ===== Pie de pÃ¡gina ===== */
 
 /* Wrapper del pie: fondo a todo el ancho, contenido centrado. */
 .pie-fondo {
@@ -556,4 +556,168 @@ a:focus-visible {
 .pie-enlaces a:hover,
 .pie-enlaces a:focus-visible {
   text-decoration: underline;
+}
+/* ===== Navegación principal ===== */
+
+.nav-principal {
+  margin-bottom: var(--esp-4);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.nav-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-lista a {
+  display: inline-block;
+  padding: var(--esp-2) 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-texto-suave);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-lista a:hover,
+.nav-lista a:focus-visible {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.nav-lista a[aria-current='page'] {
+  color: var(--color-primario);
+  border-bottom-color: var(--color-primario);
+}
+
+/* Barra superior */
+.barra-navegacion {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.barra-navegacion .contenedor {
+  padding-top: var(--esp-2);
+  padding-bottom: var(--esp-2);
+}
+
+.barra-navegacion .nav-principal {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Móvil: botón de menú */
+.nav-movil {
+  display: block;
+  /* En móvil el menú se despliega dentro del flujo, para que empuje el
+     contenido en lugar de superponerse sobre él. */
+  position: static;
+}
+
+.nav-boton {
+  padding: var(--esp-2) var(--esp-3);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid var(--color-borde-fuerte);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+}
+
+.nav-boton::-webkit-details-marker {
+  display: none;
+}
+
+.nav-movil .nav-lista {
+  flex-direction: column;
+  gap: 0;
+  padding: var(--esp-2) 0 var(--esp-3);
+  background: var(--color-superficie);
+}
+
+.nav-movil .nav-lista a {
+  display: block;
+  padding: var(--esp-3) var(--esp-2);
+  border-bottom: none;
+  border-left: 3px solid transparent;
+}
+
+.nav-movil .nav-lista a[aria-current='page'] {
+  border-left-color: var(--color-primario);
+  background: var(--color-primario-suave);
+}
+
+/* A partir de 40rem (640px) la navegación se muestra siempre en fila. */
+@media (min-width: 40rem) {
+  .nav-movil {
+    display: none;
+  }
+
+  .nav-escritorio {
+    display: flex;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .nav-escritorio {
+    display: none;
+  }
+}
+
+/* ===== Enlaces relacionados (index) ===== */
+
+.enlaces-relacionados {
+  margin-top: var(--esp-6);
+  padding: var(--esp-5) var(--esp-4);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.enlaces-relacionados h2 {
+  margin: 0 0 var(--esp-4);
+  font-size: 1.15rem;
+}
+
+.enlaces-relacionados ul {
+  display: grid;
+  gap: var(--esp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlaces-relacionados a {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.enlaces-relacionados p {
+  margin: var(--esp-1) 0 0;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* ===== Definiciones ===== */
+
+.definiciones dt {
+  margin-top: var(--esp-4);
+  font-weight: 600;
+}
+
+.definiciones dt:first-child {
+  margin-top: 0;
+}
+
+.definiciones dd {
+  margin: var(--esp-1) 0 0;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
 }
