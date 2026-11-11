@@ -5,7 +5,7 @@
   - Assets estáticos (JS, CSS, imágenes): stale-while-revalidate.
   Ver sldc/02-diseno.md → "Estrategia PWA y offline". */
 
-const CACHE_NAME = 'calculadora-insumos-v5';
+const CACHE_NAME = 'calculadora-insumos-v6';
 
 // AssetsPrecacheados en la instalación del SW.
 const PRECACHE_URLS = [

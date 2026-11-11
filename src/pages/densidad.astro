@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+import { CalculadoraDensidad } from '../components/CalculadoraDensidad';
+---
+
+<Base
+  titulo="Calculadora de densidad de siembra del café"
+  descripcion="Calcula cuántas plantas de café caben en tu finca, o qué distancias de siembra necesitas para una cantidad de plantas dada. Con ajustes a la medida."
+  rutaActual="/densidad/"
+>
+  <header>
+    <h1>Calculadora de densidad de siembra</h1>
+    <p class="subtitulo">
+      ¿Cuántas plantas caben en tu finca? ¿O al revés, qué distancia
+      necesitas para sembrar las plantas que quieres?
+    </p>
+  </header>
+
+  <CalculadoraDensidad client:load />
+
+  <Anuncio />
+
+  <section class="ayuda">
+    <h2>Qué es la densidad de siembra</h2>
+    <p>
+      La densidad de siembra es el número de plantas que se siembran por
+      unidad de superficie. En café se mide normalmente en
+      <strong>plantas por hectárea</strong>, y se calcula a partir de dos
+      distancias: la que hay entre plantas y la que hay entre calles o
+      surcos.
+    </p>
+    <p>
+      La distancia entre plantas y la distancia entre calles determinan el
+      espacio que ocupa cada una: multiplicando ambas sale el área que
+      cada planta ocupa en el suelo, y dividiendo el área de la finca
+      entre ese valor se obtiene el número de plantas.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Por qué importa la distancia</h2>
+    <p>
+      La distancia de siembra tiene efectos directos sobre el desarrollo
+      del cafetal:
+    </p>
+    <ul class="lista-consejos">
+      <li>
+        <strong>Competencia por luz.</strong> Un cafetal muy denso se
+        cierra rápido y las hojas del interior reciben poca luz, lo que
+        reduce la floración.
+      </li>
+      <li>
+        <strong>Ventilación y humedad.</strong> Una siembra más abierta
+        permite que el aire circule entre los surcos, lo que ayuda a
+        reducir la humedad dentro del cafetal.
+      </li>
+      <li>
+        <strong>Manejo.</strong> Un cafetal muy apretado dificulta el
+        paso entre surcos para aplicar, cosechar y hacer las deshierbas.
+      </li>
+      <li>
+        <strong>Tamaño del grano y producción.</strong> La densidad
+        influencia cómo se reparte la luz y los nutrientes, y por tanto
+        el tamaño del grano y el rendimiento por lote.
+      </li>
+    </ul>
+  </section>
+
+  <section class="ayuda">
+    <h2>Cómo se mide</h2>
+    <p>
+      La fórmula es simple y la calculadora la aplica por ti:
+    </p>
+    <p class="formula">
+      Superficie por planta = distancia entre plantas × distancia entre
+      calles
+    </p>
+    <p>
+      Por ejemplo, con plantas cada 1,20 m y calles cada 1,80 m, cada
+      planta ocupa 2,16 m². En una hectárea caben unas 4.630 plantas.
+    </p>
+    <p>
+      Para contar las plantas de un lote que ya está sembrado, puedes usar
+      el método de muestreo: cuenta las plantas de una porción conocida
+      (por ejemplo, 10 metros de surco) y multiplica para el largo total
+      del surco. La
+      <a href="/densidad/">calculadora de densidad</a> te sirve para
+      convertir ese resultado a densidad por hectárea.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Distancias de referencia</h2>
+    <p>
+      Estas son las distancias que salen de cada densidad. Sirven como
+      referencia para dimensionar un lote nuevo o comparar con la
+      densidad de un cafetal existente.
+    </p>
+
+    <table class="tabla-referencia">
+      <caption>
+        Densidades habituales en café y las distancias que las producen
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Plantas por hectárea</th>
+          <th scope="col">Entre plantas</th>
+          <th scope="col">Entre calles</th>
+          <th scope="col">Superficie por planta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.000</td>
+          <td>1,50 m</td>
+          <td>2,00 m</td>
+          <td>3,00 m²</td>
+        </tr>
+        <tr>
+          <td>1.250</td>
+          <td>1,40 m</td>
+          <td>1,90 m</td>
+          <td>2,66 m²</td>
+        </tr>
+        <tr>
+          <td>1.500</td>
+          <td>1,30 m</td>
+          <td>1,80 m</td>
+          <td>2,34 m²</td>
+        </tr>
+        <tr>
+          <td>1.750</td>
+          <td>1,20 m</td>
+          <td>1,80 m</td>
+          <td>2,16 m²</td>
+        </tr>
+        <tr>
+          <td>2.000</td>
+          <td>1,10 m</td>
+          <td>1,80 m</td>
+          <td>1,98 m²</td>
+        </tr>
+        <tr>
+          <td>2.500</td>
+          <td>1,00 m</td>
+          <td>1,60 m</td>
+          <td>1,60 m²</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="nota-ayuda">
+      La densidad que conviene depende de la variedad, el clima, el tipo de
+      suelo, la disponibilidad de sombra y el sistema de manejo. Esta tabla
+      es solo aritmética: la decisión final la toma el técnico que conoce
+      tu lote.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Los límites que usa la calculadora</h2>
+    <p>
+      La calculadora propone distancias entre <strong>0,90 m</strong> y
+      <strong>2,00 m</strong>, tanto entre plantas como entre calles.
+    </p>
+    <ul class="lista-consejos">
+      <li>
+        <strong>0,90 m</strong> es una siembra muy cerrada, propia de
+        cafetales jóvenes densos o de sistemas de alta densidad.
+      </li>
+      <li>
+        <strong>2,00 m</strong> corresponde a una siembra abierta, con
+        calles amplias que favorecen la ventilación y el paso de
+        maquinaria.
+      </li>
+    </ul>
+    <p>
+      Si tu objetivo de plantas no se puede cumplir con esas distancias,
+      la calculadora te lo avisa y te muestra las medidas más cercanas
+      posibles, para que la decisión sea informada.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>De la densidad a la fertilización</h2>
+    <p>
+      Una vez sabes cuántas plantas tiene tu lote, puedes pasar a la
+      <a href="/">calculadora de bultos de fertilizante</a>: con el número
+      de plantas y la dosis en gramos por planta te dice cuántos bultos de
+      cada insumo debes comprar.
+    </p>
+  </section>
+
+  <Anuncio />
+</Base>
