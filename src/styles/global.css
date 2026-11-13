@@ -1,5 +1,5 @@
 :root {
-  /* Colores ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â tema claro */
+  /* Colores ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â tema claro */
   --color-fondo: #f6f7f4;
   --color-superficie: #ffffff;
   --color-texto: #1f2a24;
@@ -23,9 +23,9 @@
   --esp-5: 1.5rem;
   --esp-6: 2rem;
 
-  /* TipografÃƒÆ’Ã‚Â­a */
+  /* TipografÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­a */
   --fuente: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --tamaÃƒÆ’Ã‚Â±o-base: 1rem;
+  --tamaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â±o-base: 1rem;
   --radio: 8px;
   --sombra: 0 1px 3px rgb(0 0 0 / 8%);
 }
@@ -62,13 +62,13 @@ html {
 body {
   margin: 0;
   font-family: var(--fuente);
-  font-size: var(--tamaÃƒÆ’Ã‚Â±o-base);
+  font-size: var(--tamaÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â±o-base);
   line-height: 1.5;
   color: var(--color-texto);
   background: var(--color-fondo);
 }
 
-/* Foco visible para navegaciÃƒÆ’Ã‚Â³n por teclado (accesibilidad) */
+/* Foco visible para navegaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n por teclado (accesibilidad) */
 :focus-visible {
   outline: 3px solid var(--color-foco);
   outline-offset: 2px;
@@ -160,7 +160,7 @@ input[type='number'] {
   width: 100%;
   padding: var(--esp-3);
   font: inherit;
-  font-size: 1rem; /* evita zoom automÃƒÆ’Ã‚Â¡tico en iOS */
+  font-size: 1rem; /* evita zoom automÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡tico en iOS */
   color: var(--color-texto);
   background: var(--color-fondo);
   border: 1px solid var(--color-borde-fuerte);
@@ -205,7 +205,7 @@ button {
   border: 1px solid transparent;
   border-radius: var(--radio);
   cursor: pointer;
-  min-height: 44px; /* objetivo tÃƒÆ’Ã‚Â¡ctil mÃƒÆ’Ã‚Â­nimo */
+  min-height: 44px; /* objetivo tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ctil mÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­nimo */
 }
 
 button:hover:not(:disabled) {
@@ -308,9 +308,9 @@ button.secundario:hover:not(:disabled) {
   color: var(--color-error);
 }
 
-/* ===== Modo tarjeta en pantallas pequeÃƒÆ’Ã‚Â±as =====
+/* ===== Modo tarjeta en pantallas pequeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â±as =====
   Cada insumo se convierte en una tarjeta apilada.
-  Ver decisiÃƒÆ’Ã‚Â³n de diseÃƒÆ’Ã‚Â±o "opciÃƒÆ’Ã‚Â³n B" en la fase B-9. */
+  Ver decisiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n de diseÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â±o "opciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n B" en la fase B-9. */
 
 @media (max-width: 37.5rem) {
   .tabla-mezcla,
@@ -468,7 +468,7 @@ button.secundario:hover:not(:disabled) {
 }
 
 .faq details[open] summary::after {
-  content: 'ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢';
+  content: 'ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢';
 }
 
 .faq details p {
@@ -477,7 +477,7 @@ button.secundario:hover:not(:disabled) {
   font-size: 0.95rem;
 }
 
-/* ===== Pie de pÃƒÆ’Ã‚Â¡gina ===== */
+/* ===== Pie de pÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gina ===== */
 
 /* Wrapper del pie: fondo a todo el ancho, contenido centrado. */
 .pie-fondo {
@@ -557,7 +557,7 @@ a:focus-visible {
 .pie-enlaces a:focus-visible {
   text-decoration: underline;
 }
-/* ===== NavegaciÃƒÂ³n principal ===== */
+/* ===== NavegaciÃƒÆ’Ã‚Â³n principal ===== */
 
 .nav-principal {
   margin-bottom: var(--esp-4);
@@ -613,11 +613,11 @@ a:focus-visible {
   border-bottom: none;
 }
 
-/* MÃƒÂ³vil: botÃƒÂ³n de menÃƒÂº */
+/* MÃƒÆ’Ã‚Â³vil: botÃƒÆ’Ã‚Â³n de menÃƒÆ’Ã‚Âº */
 .nav-movil {
   display: block;
-  /* En mÃƒÂ³vil el menÃƒÂº se despliega dentro del flujo, para que empuje el
-     contenido en lugar de superponerse sobre ÃƒÂ©l. */
+  /* En mÃƒÆ’Ã‚Â³vil el menÃƒÆ’Ã‚Âº se despliega dentro del flujo, para que empuje el
+     contenido en lugar de superponerse sobre ÃƒÆ’Ã‚Â©l. */
   position: static;
 }
 
@@ -654,7 +654,7 @@ a:focus-visible {
   background: var(--color-primario-suave);
 }
 
-/* A partir de 40rem (640px) la navegaciÃƒÂ³n se muestra siempre en fila. */
+/* A partir de 40rem (640px) la navegaciÃƒÆ’Ã‚Â³n se muestra siempre en fila. */
 @media (min-width: 40rem) {
   .nav-movil {
     display: none;
@@ -730,7 +730,7 @@ a:focus-visible {
   border-radius: var(--radio);
 }
 
-/* PestaÃ±as */
+/* PestaÃƒÂ±as */
 
 .pestanas {
   display: flex;
@@ -827,7 +827,7 @@ select {
   border-radius: var(--radio);
 }
 
-/* Variante principal: los cálculos que resuelve la herramienta.
+/* Variante principal: los cÃ¡lculos que resuelve la herramienta.
    Contorno firme, sin el fondo verde reservado a la destacada. */
 .opciones-sowing.principal {
   border-width: 2px;
@@ -836,7 +836,7 @@ select {
 }
 
 /* Variante informativa: los extremos del intervalo permitido.
-   Se muestran como dato de referencia, sin llamar la atención. */
+   Se muestran como dato de referencia, sin llamar la atenciÃ³n. */
 .opciones-sowing.informativa {
   background: transparent;
   border-style: dashed;
@@ -973,8 +973,8 @@ select {
   color: var(--color-texto-suave);
 }
 
-/* En pantallas pequeÃ±as la tabla de referencia se desliza en horizontal
-   en lugar de romper el diseÃ±o. */
+/* En pantallas pequeÃƒÂ±as la tabla de referencia se desliza en horizontal
+   en lugar de romper el diseÃƒÂ±o. */
 @media (max-width: 40rem) {
   .tabla-referencia {
     display: block;
@@ -1012,6 +1012,82 @@ select {
 .lista-resultados .secundario {
   display: block;
   font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+/* ===== Conversores de unidades ===== */
+
+.conversores {
+  display: grid;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-5);
+}
+
+.bloque-conversion {
+  padding: var(--esp-4);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.bloque-conversion h3 {
+  margin: 0 0 var(--esp-1);
+  font-size: 1.1rem;
+}
+
+.descripcion-bloque {
+  margin: 0 0 var(--esp-4);
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.campo-conversion {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-4);
+}
+
+@media (max-width: 30rem) {
+  .campo-conversion {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lista de equivalentes */
+
+.equivalentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--esp-2);
+  margin: 0;
+}
+
+.equivalente {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-1);
+  padding: var(--esp-3);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+.equivalente dt {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.equivalente dd {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nota-bloque {
+  margin: var(--esp-4) 0 0;
+  padding-top: var(--esp-3);
+  border-top: 1px solid var(--color-borde);
   font-size: 0.85rem;
   color: var(--color-texto-suave);
 }

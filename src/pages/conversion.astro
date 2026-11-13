@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+import { Conversores } from '../components/Conversores';
+---
+
+<Base
+  titulo="Convertidor de unidades del agro"
+  descripcion="Convierte entre hectáreas, cuadras, acres, kilogramos, arrobas, cargas, bultos, litros y galones. Y estima la equivalencia entre café en cereza y café pergamino seco."
+  rutaActual="/conversion/"
+>
+  <header>
+    <h1>Convertidor de unidades del agro</h1>
+    <p class="subtitulo">
+      Las equivalencias que más se necesitan en el campo, de una vez.
+    </p>
+  </header>
+
+  <Conversores client:load />
+
+  <Anuncio />
+
+  <section class="ayuda">
+    <h2>La cuadra</h2>
+    <p>
+      La cuadra es la medida de terreno más usada en Colombia, equivale a 6.400 m². En este caso, el enfoque es agragrario, así que estamos hablando de la extensión de un terreno o lote.
+    </p>
+    <p>
+      Generalmente se usa también para indicar el tamaño de una finca, por ejemplo: "esa finca tiene 10 cuadras".
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Arrobas y cargas</h2>
+    <p>
+      La <strong>arroba</strong> es la unidad de peso más habitual en la
+      comercialización del café en Colombia y equivale a
+      <strong>12,5 kg</strong>, la décima parte de una carga, entonces, la
+      <strong>carga</strong> equivale a <strong>125 kg</strong>, o diez
+      arrobas.
+    </p>
+    <p>
+      Y un recordatorio: el <strong>bulto</strong> es el empaque con el que
+      llega el fertilizante del fabricante (habitualmente 40 o 50 kg), no una
+      medida de peso estandarizada. Algunos comerciantes de fertilizantes, los venden a granel, por kilo.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Café en cereza y café pergamino</h2>
+    <p>
+      El café que se recolecta en la finca se denomina <strong>en cereza</strong>, que
+      tiene mucha agua y poca materia seca. Lo que se vende para
+      exportación es el <strong>pergamino seco</strong>. La diferencia en volumen y peso entre
+      uno y otro es grande: se necesitan alrededor de <strong>60 kg de cereza para obtener una arroba (12,5 kg) de
+      pergamino</strong>.
+    </p>
+    <p>
+      La conversión es una <strong>referencia</strong>, no una medida exacta: para números de
+      producción reales hay que consultar las tablas de la Federación
+      Nacional de Cafeteros y de Cenicafé.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Galones y fumigadoras</h2>
+    <p>
+      El galón que se usa en Colombia es el <strong>estadounidense</strong>,
+      que equivale a <strong>3,785 litros</strong>.
+    </p>
+    <p>
+      El centímetro cúbico es el mismo mililitro. Sirve para calcular
+      diluciones: cuántos centímetros cúbicos de producto necesita por
+      litro de agua.
+    </p>
+  </section>
+
+  <section class="ayuda">
+    <h2>Tabla de equivalencias rápidas</h2>
+
+    <table class="tabla-referencia">
+      <caption>
+        Equivalencias más usadas en el agro colombiano
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Unidad</th>
+          <th scope="col">Equivale a</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 hectárea</td>
+          <td>10.000 m² · 15,625 cuadras · 2,47 acres</td>
+        </tr>
+        <tr>
+          <td>1 cuadra</td>
+          <td>6.400 m² · 0,64 ha · 1,5625 acres</td>
+        </tr>
+        <tr>
+          <td>1 acre</td>
+          <td>4.046,86 m² · 0,4047 ha · 0,6325 cuadras</td>
+        </tr>
+        <tr>
+          <td>1 arroba</td>
+          <td>12,5 kg · 0,1 carga</td>
+        </tr>
+        <tr>
+          <td>1 carga</td>
+          <td>125 kg · 10 arrobas</td>
+        </tr>
+        <tr>
+          <td>1 bulto de 50 kg</td>
+          <td>4 arrobas · 0,4 cargas</td>
+        </tr>
+        <tr>
+          <td>1 bulto de 40 kg</td>
+          <td>3,2 arrobas · 0,32 cargas</td>
+        </tr>
+        <tr>
+          <td>1 galón</td>
+          <td>3,785 L · 3.785 cm³</td>
+        </tr>
+        <tr>
+          <td>60 kg de cereza</td>
+          <td>≈ 12,5 kg de pergamino · ≈ 1 arroba</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="ayuda">
+    <h2>Cómo se usa</h2>
+    <p>
+      Escribe la cantidad en el primer campo y elige la unidad en el
+      selector. Todos los equivalentes se actualizan al instante, así que
+      puedes comparar de un vistazo cuál es el equivalente en las otras
+      unidades.
+    </p>
+    <p>
+      Si te sirve para calcular fertilizante, puedes ir a la <a href="/">calculadora de bultos</a>. Y si lo que necesitas es saber
+      cuántas plantas caben en un terreno, está la <a href="/densidad/">calculadora de densidad de siembra</a>.
+    </p>
+  </section>
+
+  <Anuncio />
+</Base>
